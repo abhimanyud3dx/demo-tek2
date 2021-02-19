@@ -9,7 +9,7 @@ app.get('/', function(request, response) {
 })
 
 app.get('/multiply/:num1/:num2', function(request, response) {
-	cosole.log(JSON.stringify(request.params));
+	console.log(JSON.stringify(request.params));
 	if(request.params.num1 && request.params.num2) {
 		response.send(request.params.num1* request.params.num2);
 	} else {
