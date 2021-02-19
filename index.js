@@ -4,12 +4,15 @@ var app = express()
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
-app.get('/:id', function(request, response) {
+app.get('/', function(request, response) {
   response.send('Hello World!')
 })
 
-app.get('/multiply/', function(request, response) {
-  response.send(req.query.num1* req.query.num2);
+app.get('/math/:operation', function(request, response) {
+	if(request.params.operation == 'multiply') {
+		response.send(request.query.num1* request.query.num2);
+	}
+	response.send('Please enter correct request.');
 })
 
 app.listen(app.get('port'), function() {
