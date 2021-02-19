@@ -9,7 +9,7 @@ app.get('/:id', function(request, response) {
 })
 
 app.get('/multiply/', function(request, response) {
-  response.send(req.query.num1* req.query.num3);
+  response.send(req.query.num1* req.query.num2);
 })
 
 app.listen(app.get('port'), function() {
