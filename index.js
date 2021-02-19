@@ -11,8 +11,9 @@ app.get('/', function(request, response) {
 app.get('/math/:operation', function(request, response) {
 	if(request.params.operation == 'multiply') {
 		response.send(request.query.num1* request.query.num2);
+	} else {
+		response.send('Please enter correct request.');
 	}
-	response.send('Please enter correct request.');
 })
 
 app.listen(app.get('port'), function() {
